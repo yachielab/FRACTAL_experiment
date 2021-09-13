@@ -1,5 +1,4 @@
 source("~/work/yachie/fractal_gestalt/FRACTAL_mutation_call/script/R/errorPCR_toolkit.R")
-source("~/work/fractal_naoki/FRACTAL_mutation_call/script/R/DFS_src.R")
 library(Seurat)
 library(tidyverse)
 library(ggplot2)
@@ -15,12 +14,11 @@ library(brunnermunzel)
 
 
 ##################################
-# treepath: lineage tree (newick)
+# treepath: full lineage tree (newick)
 # use_tips: list of tips to use
 ##################################
-ntips <- 15000
-use_tips <- args[3]
-
+ntips <- 15000 #maximum number of leaves for each clade
+use_tips #extracted from calc_distance.py outputs
 
 tree_imported <- read.newick(treepath)
 tree_phylo <- as.phylo(tree_imported)
